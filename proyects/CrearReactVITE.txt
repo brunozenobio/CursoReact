@@ -1,0 +1,6 @@
+ npm create vite@latest
+//java srip swc
+//nombre del proyect
+cd carpetaproject
+npm install
+npm run dev
