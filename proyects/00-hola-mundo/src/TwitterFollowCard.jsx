@@ -1,8 +1,9 @@
 import {useState} from 'react';//HOOKS REACT AÑADIR FUNCIONANLIDAD A LOS COMPONENTES
 
 
-export function TwitterFollowCard({children,formatUserName,userName='unknow'}) {
-    const [isFollowing,setIsFollowing] = useState(false);
+export function TwitterFollowCard({children,formatUserName,userName='unknow',initialIsFollowing}) {
+    const [isFollowing,setIsFollowing] = useState(initialIsFollowing);
+    // SI USO IUNA PROP PARA INICIAR UN ESTADO DE USESTATE SE INICIALIZA SOLO UNA VEZ
     const handleClick = ()=>{
         setIsFollowing(!isFollowing);
     }
@@ -24,7 +25,8 @@ export function TwitterFollowCard({children,formatUserName,userName='unknow'}) {
             </header>
             <aside>
                 <button className={buttonClassName} onClick={handleClick} >
-                   {text}
+                <span className='tw-followCard-text'> {text}</span>
+                <span className='tw-followCard-stopFollow'>Dejar de seguir</span>
                 </button>
             </aside>
         </article>
